@@ -160,7 +160,9 @@
     <Compile Include="Areas\HelpPage\SampleGeneration\SampleDirection.cs" />
     <Compile Include="Areas\HelpPage\SampleGeneration\TextSample.cs" />
     <Compile Include="Areas\HelpPage\XmlDocumentationProvider.cs" />
+    <Compile Include="Controllers\DAL.cs" />
     <Compile Include="Controllers\HomeController.cs" />
+    <Compile Include="Controllers\PersonController.cs" />
     <Compile Include="Controllers\ValuesController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
@@ -171,10 +173,11 @@
     <Content Include="app\app.js" />
     <Content Include="app\list\list.html" />
     <Content Include="app\list\listCtrl.js" />
-    <Content Include="app\newPerson\newperson.html" />
-    <Content Include="app\newPerson\newpersonCtrl.js" />
+    <Content Include="app\newperson\newperson.html" />
+    <Content Include="app\newperson\newpersonCtrl.js" />
     <Content Include="app\main\main.html" />
     <Content Include="app\main\mainCtrl.js" />
+    <Content Include="app\services\personService.js" />
     <Content Include="Areas\HelpPage\HelpPage.css" />
     <Content Include="Content\bootstrap-theme.css" />
     <Content Include="Content\bootstrap-theme.min.css" />

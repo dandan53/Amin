@@ -2,25 +2,26 @@
 
     $scope.addPerson = function () {
 
-        if ($scope.newPerson.firstname != "" && $scope.newPerson.password != "" && $scope.newPerson.email != "") {
-            var newPerson = {
-                username: $scope.newPerson.username,
-                password: $scope.newPerson.password,
-                email: $scope.newPerson.email,
-                phone: $scope.newPerson.phone
-            };
+        //if ($scope.newPerson.firstName != "" && $scope.newPerson.lastName != "" &&
+        //        $scope.newPerson.mother != "" && $scope.newPerson.gender != "") {
+        //    var newPerson = {
+        //        username: $scope.newPerson.username,
+        //        password: $scope.newPerson.password,
+        //        email: $scope.newPerson.email,
+        //        phone: $scope.newPerson.phone
+        //    };
 
-            SignupService.register(newPerson)
-                .then(
-                    loadRemoteData,
-                    function (errorMessage) {
-                        console.warn(errorMessage);
-                    }
-                );
-        }
-        else {
-            alert('נא מלא את כל הפרטים');
-        }
+        //    SignupService.register(newPerson)
+        //        .then(
+        //            loadRemoteData,
+        //            function (errorMessage) {
+        //                console.warn(errorMessage);
+        //            }
+        //        );
+        //}
+        //else {
+        //    alert('נא מלא את כל הפרטים');
+        //}
     };
 
     //// I load the remote data from the server.

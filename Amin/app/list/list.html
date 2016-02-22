@@ -4,46 +4,35 @@
         <div>
             
             <div class="row">
-                <div class="col-md-3">
-                    <p >רשימת אנשים</p>
-                </div> 
-            </div>
-
-            <div class="row">
-                <div class="col-md-9">
-                    <p ></p>
+                <div class="col-md-6 col-md-offset-3 text-center">
+                   <h2> רשימת אנשים </h2>
                 </div>
-                
-                <div class="col-md-3">
-                    <p >שם:</p>
-                </div> 
             </div>
+            
+         <!--   <div class="row" style="padding-bottom: 4px">
                 
-            <div class="row">
                 <div class="col-md-3">
                     <!--   <a href="#" class="btn btn-info btn-lg"><span class="glyphicon glyphicon-search" ng-click="search()"></span> חפש</a> -->
                     <!-- <button type="button" class="btn btn-primary" ng-click="search()"> חפש </button> -->
-                    <button class="btn btn-primary" ng-click="search()">
+           <!--          <button class="btn btn-primary" ng-click="search()">
                         <span class="glyphicon glyphicon-search"></span>  חפש
                     </button>
 
                 </div>
                 
-                
-
-                <div class="col-md-3">
+                <div class="col-md-2">
                     <input name="dataTables-exaple_length" aria-controls="dataTables-example" class="form-control input-sm"
                             ng-model="selectedPerson"> </input>
                 </div>
 
-                <!-- <div class="col-md-3">
-                    <select name="dataTables-exaple_length" aria-controls="dataTables-example" class="form-control input-sm"
-                            ng-model="selectedOption" ng-options="option.name for option in options" ng-change="update_selected_option()"></select>
-                </div> -->
+                <div class="col-md-7">
+                    <p ></p>
+                </div>
+
             </div>
 
         </div>
-    </div>
+    </div> -->
         
     <div class="container" dir="rtl" style="direction: rtl">
        
@@ -51,7 +40,7 @@
         
             <tbody>
                 <tr ng-repeat="person in persons">
-                    <td>{{person.display}}</td>
+                    <td>{{person}}</td>
                 </tr>
             </tbody>
         </table>
