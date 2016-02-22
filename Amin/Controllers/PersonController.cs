@@ -35,14 +35,12 @@ namespace Amin.Controllers
         //    return Request.CreateResponse(HttpStatusCode.OK, new Item());
         //}
 
-        // POST api/person
-        public HttpResponseMessage PostTodo(string person)
-        {
-            HttpResponseMessage response = Request.CreateResponse(HttpStatusCode.Created, person);
-            
+        // POST api/person\
+        public bool Post(string person)
+        {          
             DAL.Instance.AddPerson(person);
 
-            return response;
+            return true;
         }
 
         //// PUT api/Item/5

@@ -33,11 +33,7 @@
 
         var request = $http({
             method: "post",
-            url: "/api/person/",
-            data:
-            {
-                person: person
-            }
+            url: "/api/person?person=" + person
         });
 
         return (request.then(handleSuccess, handleError));
