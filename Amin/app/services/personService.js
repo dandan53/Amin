@@ -19,7 +19,7 @@
 
         var request = $http({
             method: "get",
-            url: "/api/person/",
+            url: "/api/person",
             //params: {
             //    id: id
             //}

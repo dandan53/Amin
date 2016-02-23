@@ -16,12 +16,12 @@ namespace Amin.Controllers
         // GET api/person
         public IEnumerable<string> Get()
         {
-            List<string> personList = DAL.Instance.GetPersonList();
+            List<string> personList = DBDAL.GetPersonsFromDB();
 
             return personList;
         }
 
-        
+
         //// GET api/Todo/5
         //public Item Get(int id)
         //{
@@ -35,10 +35,10 @@ namespace Amin.Controllers
         //    return Request.CreateResponse(HttpStatusCode.OK, new Item());
         //}
 
-        // POST api/person\
+        // POST api/person?person=aaa
         public bool Post(string person)
-        {          
-            DAL.Instance.AddPerson(person);
+        {
+            DBDAL.AddPersonToDB(person);
 
             return true;
         }
