@@ -16,9 +16,9 @@ namespace Amin.Controllers
         // GET api/person
         public IEnumerable<string> Get()
         {
-            List<string> personList = DBDAL.GetPersonsFromDB();
+            //List<string> personList = DBDAL.GetPersonsFromDB();
 
-            return personList;
+            return null; //personList;
         }
 
 
@@ -38,7 +38,7 @@ namespace Amin.Controllers
         // POST api/person?person=aaa
         public bool Post(string person)
         {
-            DBDAL.AddPersonToDB(person);
+           // DBDAL.AddPersonToDB(person);
 
             return true;
         }

@@ -59,6 +59,8 @@ C:\Users\danda\documents\visual studio 2012\Projects\Amin\Amin\bin\ko\System.Spa
 C:\Users\danda\documents\visual studio 2012\Projects\Amin\Amin\bin\ru\System.Spatial.resources.dll
 C:\Users\danda\documents\visual studio 2012\Projects\Amin\Amin\bin\zh-Hans\System.Spatial.resources.dll
 C:\Users\danda\documents\visual studio 2012\Projects\Amin\Amin\bin\zh-Hant\System.Spatial.resources.dll
-C:\Users\danda\documents\visual studio 2012\Projects\Amin\Amin\obj\Debug\Amin.csprojResolveAssemblyReference.cache
 C:\Users\danda\documents\visual studio 2012\Projects\Amin\Amin\obj\Debug\Amin.dll
 C:\Users\danda\documents\visual studio 2012\Projects\Amin\Amin\obj\Debug\Amin.pdb
+C:\Users\danda\documents\visual studio 2012\Projects\Amin\Amin\bin\EntityFramework.SqlServer.dll
+C:\Users\danda\documents\visual studio 2012\Projects\Amin\Amin\bin\EntityFramework.SqlServer.xml
+C:\Users\danda\documents\visual studio 2012\Projects\Amin\Amin\obj\Debug\Amin.csprojResolveAssemblyReference.cache
