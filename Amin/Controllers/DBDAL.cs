@@ -1,6 +1,12 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Collections.Specialized;
+using System.Configuration;
 using System.Linq;
+using System.Net;
+using System.Net.Http;
+using System.Net.Http.Headers;
+using System.Text;
 using System.Web;
 using System.Web.Mvc;
 
@@ -8,13 +14,10 @@ namespace Amin.Controllers
 {
     public sealed class DBDAL
     {
-        private List<string> personList = new List<string>();
-
         private static DBDAL instance = null;
 
         private DBDAL()
         {
-            InitPersonList();
         }
 
         public static DBDAL Instance
@@ -33,38 +36,71 @@ namespace Amin.Controllers
 
         public List<string> GetPersonList()
         {
-            return personList;
-        }
+            List<string> retVal = null;
 
-        public void AddPerson(string person)
-        {
-            if (IsPersonExist(person) == false)
+            try
             {
-                personList.Add(person);
+                HttpClient client = new HttpClient();
+                string AminDBServiceUrl = ConfigurationManager.AppSettings["AminDBServiceUrl"];
+                string url = "api/person";
+                client.BaseAddress = new Uri(AminDBServiceUrl);
+
+                // Add an Accept header for JSON format.
+                client.DefaultRequestHeaders.Accept.Add(new MediaTypeWithQualityHeaderValue("application/json"));
+
+                HttpResponseMessage response = client.GetAsync(url).Result;  // Blocking call!
+                if (response.IsSuccessStatusCode)
+                {
+                    var result = response.Content.ReadAsAsync<List<string>>().Result;
+                    if (result != null)
+                    {
+                        retVal = result;
+                    }
+                }
+
+                //log.Info("GetRankings. timeFrame: " + timeFrame); 
             }
+            catch (Exception Ex)
+            {
+                //log.Error("GetRankings failed. ", Ex);
+            }
+
+            return retVal;
         }
 
-        public bool IsPersonExist(string person)
+        public bool AddPerson(string person)
         {
-            bool retVal = personList.Exists(item => item.Equals(person));
+            bool retVal = false;
+
+            try
+            {
+                using (var client = new WebClient())
+                {
+                    var values = new NameValueCollection{};
+                    string AminDBServiceUrl = ConfigurationManager.AppSettings["AminDBServiceUrl"];
+                    string url = AminDBServiceUrl + "api/person?person=" + person;
+                    var bytes = client.UploadValues(url, "POST", values);
+                    var response = Encoding.UTF8.GetString(bytes);
+                    if (response.Equals("true"))
+                    {
+                        retVal = true;
+                    }
+                }
+
+              //  log.Info("Follow. followee: " + request.followee + ", action: " + request.action);
+               
+            }
+            catch (Exception ex)
+            {
+              //  log.Error("Follow. . followee: " + request.followee + ", action: " + request.action + ". ", ex);
+            }
+
             return retVal;
         }
 
         public void Init()
         {
-            InitPersonList();
         }
 
-        private void InitPersonList()
-        {
-            personList.Add("שלום ברכה בן טליה");
-            personList.Add("בני בק בן קטי");
-            personList.Add("שלווה כהן בת רונית");
-            personList.Add("אריק עמנואל בן ריטה");
-            personList.Add("שלומי ברק בן קטיה");
-            personList.Add("שלומית ברכה בת שפרה ");
-            personList.Add("אריה עמנואל בן ריטה");
-
-        }
     }
 }

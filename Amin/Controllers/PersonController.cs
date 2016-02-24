@@ -14,11 +14,10 @@ namespace Amin.Controllers
         //private List<Item> Items;
 
         // GET api/person
-        public IEnumerable<string> Get()
+        public List<string> Get()
         {
-            //List<string> personList = DBDAL.GetPersonsFromDB();
-
-            return null; //personList;
+            var retVal = (List<string>)DBDAL.Instance.GetPersonList();
+            return retVal;
         }
 
 
@@ -38,9 +37,8 @@ namespace Amin.Controllers
         // POST api/person?person=aaa
         public bool Post(string person)
         {
-           // DBDAL.AddPersonToDB(person);
-
-            return true;
+            var retVal = DBDAL.Instance.AddPerson(person);
+            return retVal;
         }
 
         //// PUT api/Item/5
